@@ -1,0 +1,34 @@
+
+.mod-List{    
+	padding: 0 12px;
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+}
+.titl{
+	font-size: 15px;
+    color: #4c4c4c;
+    line-height: 52px;
+    font-weight: normal;
+}
+/*list-app0*/
+.list-app0 { overflow:hidden; position:relative;}
+.list-app0 li { padding:12px 0; margin:0 12px; position:relative; border-top:1px solid #e6e6e6;clear: both;overflow: hidden;}
+.list-app0 li:first-child { border-top:0;}
+.list-app0 .pic { display:block; width:56px; height:56px; float:left;}
+.list-app0 .pic img { border-radius:10%;width: 100%;}
+.list-app0 .txt { display:block; margin-left:66px; font-size:14px;}
+.list-app0 .info { display:block; font-size:10px; color:#b3b3b3;margin: 6px 0px;}
+.list-app0 .info .mod-point0 { display:inline-block;}
+
+.list-app0 .txt .tit { display:block; margin-right:66px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;color:#000;}
+.list-app0 .intro { display:block; color:#7f7f7f; font-size:12px; margin-right:66px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.list-app0 .mod-btn { display:block; width:58px; position:absolute; right:0; top:28px;height:100%;padding-top:16px;}
+.list-app0 .mod-btn .btn-install { display:block; width:56px; height:28px; border:1px solid #006fe8; margin-top:9px; font-size:15px; color:#006fe8; text-align:center; line-height:28px; font-family:"Simsun", Arial, sans-serif; background:#fff; border-radius:3px;}
+.list-app0 .mod-btn .btn-install:hover,
+.list-app0 .mod-btn .btn-install:active { background:#f8f8f8;}
+
+.list-app0 .mod-btn .btn-official { display:none; margin:auto; font-size:10px; color:#b3b3b3; line-height:22px; text-align:center;}
+
+.list-app0 .mod-btn-official { top:0;}
+.list-app0 .mod-btn-official .btn-official { display:none;}
