@@ -18,17 +18,21 @@ export default class RecomComponent extends React.Component{
 		get(url).then((data)=>{
 			// 更新本组件的state
 			this.setState({'loading':false,'list':data.items});
+			
 		}).catch((error)=>{
-			console.error(error);
+			// console.error(error);
+			error
 		});
 		
 	}
 	render(){
+
 		if(this.state.loading){
 			return (
 				<h2>loading result...</h2>
 			)
 		} else{
+
 			if(this.state.list.length === 0){
 				return (
 					<h2>No result.</h2>
@@ -38,9 +42,11 @@ export default class RecomComponent extends React.Component{
 					<div className='mod-List'>
 						<h2 className='titl'>精品推荐</h2>
 						<ul className='list-app0'>
+						
 						{this.state.list.map(people=>{
+
 							return (
-								<li>
+								<li key={people.id}>
 									<a href={people.html_url}>
 										<div className='pic'>
 											<img src={people.avatar_url} />

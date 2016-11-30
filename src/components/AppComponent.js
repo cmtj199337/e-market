@@ -8,6 +8,7 @@ import TopbarComponent from './TopbarComponent.js';
 import MyCarousel from './MyCarousel.js';
 import ModComponent from './ModComponent.js';
 import RecomComponent from './RecomComponent.js';
+import SpecComponent from './SpecComponent.js';
 
 var AppComponent = React.createClass({
 
@@ -19,6 +20,7 @@ var AppComponent = React.createClass({
 				<MyCarousel />
 				<ModComponent />
 				<RecomComponent />
+				<SpecComponent />
 			</section>
 		)
 	}
