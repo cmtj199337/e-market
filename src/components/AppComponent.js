@@ -20,7 +20,7 @@ var AppComponent = React.createClass({
 				<MyCarousel />
 				<ModComponent />
 				<RecomComponent />
-				<SpecComponent />
+				<SpecComponent username="cmtj199337"/>
 			</section>
 		)
 	}

@@ -1,39 +1,34 @@
 'use strict'
 
 import React from 'react';
-import ajax from '../utils/ajax.js'
 
-export default class SpecComponent extends React.Component{
-	constructor(props){
-		super(props)
-		this.state = {
-			'loading':true,
-			'list':[]
-		}
-		let url = 'https://api.github.com/search/users?q=all';
-		
-		ajax(url).then((data)=>{
-			// 更新本组件的state
-			this.setState({'loading':false,'list':data.items});
-		}).catch((error)=>{
-			return (
-				<p>{error}</p>
-			)
-		});
-	}
+var Avatar = React.createClass({
 	render(){
 		return (
 			<div>
-				{this.state.list.map(result=>{
-					return(
-						<ul key={result.id}>
-							<li><input type='text' placeholder={result.login} /></li>
-						</ul>
-					)
-				})}
-				
+				<ProfilePic key={this.props.id} username={this.props.username} />
+				<ProfileLink jey={this.props.id} username={this.props.username} />
 			</div>
-		)
+		);
 	}
-}
+});
+
+var ProfilePic = React.createClass({
+	render(){
+		return(
+			<img src={'http://graph.facebook.com/' + this.props.username + '/picture'} />
+		);
+	}
+});
+
+var ProfileLink = React.createClass({
+	render(){
+		return(
+			<a href={'http://www.github.com/' + this.props.username} ></a>
+			
+		);
+	}
+});
+
+export default Avatar;
 
