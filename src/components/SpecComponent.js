@@ -2,33 +2,35 @@
 
 import React from 'react';
 
-var Avatar = React.createClass({
-	render(){
+var SetIntervalMixin = {
+	componentWillMount: function() {
+		this.intervals = [];
+	},
+	setInterval: function() {
+		this.intervals.push(setInterval.apply(null,arguments));
+	},
+	componentWillUnMount: function (){
+		this.intervals.map(clearInterval);
+	}
+};
+
+var TickTock = React.createClass({
+	mixins: [SetIntervalMixin],
+	getInitialState: function (){
+		return {seconds: 0};
+	},
+	componentDidMount: function (){
+		this.setInterval(this.tick, 1000);
+	},
+	tick: function (){
+		this.setState({seconds: this.state.seconds + 1});
+	},
+	render: function (){
 		return (
-			<div>
-				<ProfilePic key={this.props.id} username={this.props.username} />
-				<ProfileLink jey={this.props.id} username={this.props.username} />
-			</div>
+			<p>React has been running for {this.state.seconds} seconds.</p>
 		);
 	}
 });
 
-var ProfilePic = React.createClass({
-	render(){
-		return(
-			<img src={'http://graph.facebook.com/' + this.props.username + '/picture'} />
-		);
-	}
-});
-
-var ProfileLink = React.createClass({
-	render(){
-		return(
-			<a href={'http://www.github.com/' + this.props.username} ></a>
-			
-		);
-	}
-});
-
-export default Avatar;
+export default TickTock;
 
