@@ -9,6 +9,7 @@ import MyCarousel from './MyCarousel.js';
 import ModComponent from './ModComponent.js';
 import RecomComponent from './RecomComponent.js';
 import SpecComponent from './SpecComponent.js';
+// import PropsComponent from './PropsComponent.js';
 
 var AppComponent = React.createClass({
 
@@ -21,6 +22,7 @@ var AppComponent = React.createClass({
 				<ModComponent />
 				<RecomComponent />
 				<SpecComponent username="cmtj199337"/>
+			{/*<PropsComponent />*/}
 			</section>
 		)
 	}

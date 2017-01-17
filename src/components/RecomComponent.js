@@ -18,10 +18,11 @@ export default class RecomComponent extends React.Component{
 		get(url).then((data)=>{
 			// 更新本组件的state
 			this.setState({'loading':false,'list':data.items});
+
+			console.log(this.state.loading);
 			
 		}).catch((error)=>{
-			// console.error(error);
-			error
+			console.error(error);
 		});
 		
 	}
