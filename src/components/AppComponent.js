@@ -22,7 +22,7 @@ var AppComponent = React.createClass({
 				<ModComponent />
 				<RecomComponent />
 				<SpecComponent username="cmtj199337"/>
-			{/*<PropsComponent />*/}
+				{/*<PropsComponent />*/}
 			</section>
 		)
 	}
